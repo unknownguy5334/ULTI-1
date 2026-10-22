@@ -1,0 +1,1059 @@
+# MASTER PROMPT: COMPREHENSIVE ADMIN CONSOLE AUDIT, REDESIGN & COMPLETE IMPLEMENTATION
+
+## 1. Your Mission
+
+Act as a world-class multidisciplinary product team consisting of:
+
+- A senior product designer specializing in premium SaaS dashboards and administrative interfaces.
+- A principal UX/UI designer specializing in intuitive, human-centered, minimalist design.
+- A senior full-stack software architect.
+- A senior frontend and backend engineer.
+- A data analytics and business intelligence specialist.
+- A security engineer specializing in authentication, authorization, and administrative access.
+- A database architect and performance engineer.
+- A QA engineer responsible for comprehensive testing and reliability.
+- A mobile-first responsive design specialist.
+
+Your mission is to **conduct an exhaustive audit of the existing website's admin console, identify every meaningful weakness and missing capability, design a significantly better administrative experience, and implement a completely rebuilt admin console that is ready for real-world use.**
+
+Do not approach this as a simple visual refresh. Treat it as the redesign and development of a complete administrative operating system for the website.
+
+The finished result must allow me to manage, monitor, analyze, configure, and optimize my entire website from one centralized interface, without routinely needing to visit external platforms for analytics, content management, user management, reporting, or other administrative tasks that can reasonably be integrated into the website.
+
+The objective is to create an admin console that is **comprehensive, intuitive, visually refined, secure, reliable, maintainable, and exceptionally easy to use on both desktop and mobile.**
+
+Do not stop after producing recommendations, a mockup, a design proposal, or a list of potential improvements. Perform the audit, establish a clear implementation plan, and then execute that plan against the actual project.
+
+---
+
+## 2. First, Understand the Entire Existing Website
+
+Before changing anything, investigate the existing application thoroughly.
+
+Understand the website as a complete product rather than treating the admin console as an isolated page.
+
+Inspect all relevant parts of the project, including:
+
+- The public-facing website and its design system.
+- The existing admin console and all accessible admin pages.
+- Existing navigation structures and user journeys.
+- Available application features and business workflows.
+- Authentication and authorization mechanisms.
+- User roles and permission models.
+- Database schemas, relationships, and existing data.
+- Backend APIs, server actions, and integrations.
+- Existing analytics, event tracking, and reporting capabilities.
+- Content management functionality.
+- Existing settings, configuration screens, and operational tools.
+- Notifications, emails, and communication workflows.
+- Existing third-party integrations.
+- Error handling, loading states, and empty states.
+- Existing responsive layouts and mobile behavior.
+- Existing reusable components, design tokens, and UI libraries.
+- Existing automated tests and deployment configuration.
+
+Inspect the actual implementation wherever possible. Do not rely solely on the appearance of the interface or assumptions about what the application does.
+
+Determine which features are fully functional, partially implemented, visually present but nonfunctional, duplicated, inaccessible, difficult to discover, or completely absent.
+
+Identify dependencies between features before making architectural decisions.
+
+### Important constraints
+
+- Preserve all existing working functionality unless a deliberate replacement is justified.
+- Do not discard valuable existing business logic simply to simplify the redesign.
+- Do not break public-facing pages, user journeys, APIs, or existing integrations.
+- Reuse existing infrastructure when it is appropriate and reliable.
+- Avoid unnecessary dependencies, duplicate implementations, and architectural complexity.
+- Never assume a feature exists just because its UI suggests that it does.
+- Never assume a feature is missing until the relevant code, routes, APIs, and data structures have been investigated.
+- If something cannot be inspected, clearly identify the limitation rather than inventing findings.
+
+The first deliverable must be a reliable understanding of the current system.
+
+---
+
+## 3. Conduct an Exhaustive Admin Console Audit
+
+Audit every existing admin page, module, workflow, control, and administrative capability.
+
+Create a comprehensive inventory that documents the current state of the system.
+
+For every feature, record:
+
+1. Feature or module name.
+2. Its purpose.
+3. Current implementation status.
+4. Existing functionality.
+5. What works correctly.
+6. What is missing.
+7. What is confusing or difficult to use.
+8. What could be improved.
+9. Relevant backend, database, or integration dependencies.
+10. Security and permission considerations.
+11. Mobile usability issues.
+12. Recommended improvements.
+13. Implementation priority.
+14. Dependencies and acceptance criteria.
+
+Classify each capability using these categories:
+
+- **Keep:** Already works well and should remain.
+- **Improve:** Exists but needs functional, visual, usability, or performance improvements.
+- **Repair:** Exists but is broken, incomplete, or unreliable.
+- **Add:** Missing capability that should be introduced.
+- **Consolidate:** Duplicated functionality that should become one coherent experience.
+- **Remove:** Unnecessary, obsolete, redundant, or actively harmful functionality.
+- **Investigate:** Insufficient evidence to make a confident decision.
+
+Do not limit the audit to obvious visual problems. Examine the complete administrative experience, including operational efficiency, information architecture, data quality, permissions, accessibility, and long-term maintainability.
+
+### Evaluate the following dimensions
+
+**Usability**
+- How many steps common administrative tasks require.
+- Whether important actions are easy to find.
+- Whether terminology is understandable.
+- Whether users must remember information across multiple screens.
+- Whether forms have sensible defaults and helpful validation.
+- Whether destructive actions have appropriate safeguards.
+- Whether errors explain how to recover.
+- Whether frequent tasks can be completed quickly.
+
+**Information architecture**
+- Whether modules are logically grouped.
+- Whether navigation is predictable.
+- Whether related settings are centralized.
+- Whether important information is unnecessarily buried.
+- Whether search and filtering are adequate.
+- Whether the same information is repeated across multiple pages.
+
+**Visual design**
+- Consistency with the public website.
+- Typography, spacing, color, borders, and iconography.
+- Visual hierarchy and information density.
+- Readability of tables, charts, forms, and reports.
+- Accessibility of contrast and interactive states.
+- Consistency across every admin module.
+
+**Functionality**
+- Missing CRUD operations where appropriate.
+- Incomplete workflows.
+- Missing bulk actions.
+- Missing search, sorting, filtering, pagination, and exports.
+- Lack of useful contextual actions.
+- Incomplete reporting and configuration tools.
+- Dead buttons, placeholder content, and nonfunctional controls.
+
+**Technical quality**
+- Data fetching and caching behavior.
+- API and database consistency.
+- Performance bottlenecks.
+- Error handling and resilience.
+- Authentication and authorization.
+- Accessibility and responsive implementation.
+- Testing coverage and maintainability.
+
+---
+
+## 4. Build a Comprehensive Feature Gap Matrix
+
+After completing the audit, compare the existing capabilities against the requirements of a mature, modern administrative platform.
+
+Identify three distinct groups:
+
+### A. What already exists and works
+
+Document what should be retained, including any capabilities that are already excellent.
+
+### B. What exists but should be enhanced
+
+Identify opportunities to improve functionality, usability, performance, security, reporting, discoverability, or visual consistency.
+
+### C. What is missing and should be added
+
+Identify important capabilities that would make the admin console more self-sufficient and eliminate unnecessary dependence on external tools.
+
+Do not add features indiscriminately. Recommend features based on the actual website, its business model, its data, and its operational requirements.
+
+For each proposed feature, explain:
+
+- What problem it solves.
+- Who would use it.
+- How it would work.
+- Why it belongs in the admin console.
+- What data or infrastructure it requires.
+- Whether it can be implemented using existing infrastructure.
+- Its implementation complexity.
+- Its priority.
+- How its success will be measured.
+
+Distinguish essential capabilities from advanced capabilities and optional capabilities.
+
+If the website's business model is unclear, infer only what the code and existing functionality support. Document uncertainties and avoid building business-specific modules on unsupported assumptions.
+
+---
+
+## 5. Design the Ideal Admin Console Architecture
+
+Create a unified administrative information architecture before implementing the redesign.
+
+The navigation must be comprehensive without becoming overwhelming.
+
+Organize functionality into intuitive modules, with related capabilities grouped together and advanced tools discoverable without cluttering everyday workflows.
+
+Evaluate the following modules and implement those appropriate to the actual website.
+
+### 5.1 Executive Dashboard
+
+Create a useful, configurable overview of the entire website.
+
+Include relevant metrics such as:
+
+- Total users and active users.
+- New users and user growth.
+- Sessions, visits, page views, and engagement.
+- Traffic sources and acquisition channels.
+- Conversion rates and important funnel stages.
+- Content performance.
+- Revenue, transactions, subscriptions, or orders, if applicable.
+- Customer retention and churn, if applicable.
+- Errors, outages, and operational health.
+- Important business events and unusual metric changes.
+- Recent administrative activity.
+- Outstanding tasks and actionable alerts.
+
+Every metric must have a clear definition, appropriate date range, and reliable data source.
+
+Allow administrators to adjust date ranges, compare periods, customize dashboard widgets, and navigate from summary metrics to detailed reports.
+
+Avoid decorative charts and vanity metrics that do not help administrators make decisions.
+
+### 5.2 Advanced Analytics and Business Intelligence
+
+Make analytics a first-class component of the admin console.
+
+The goal is to provide meaningful first-party analytics and reduce reliance on separate analytics platforms for routine reporting.
+
+Where appropriate, implement:
+
+- Traffic analytics.
+- Page and content performance.
+- User behavior and engagement.
+- Acquisition and referral sources.
+- Campaign and UTM tracking.
+- Conversion funnels.
+- Retention and cohort analysis.
+- Landing-page performance.
+- Search analytics.
+- Device, browser, and geographic breakdowns where justified.
+- Revenue and transaction analytics where applicable.
+- Custom date ranges and period comparisons.
+- Custom reports and saved views.
+- Metric segmentation and filtering.
+- Exportable reports.
+- Scheduled report delivery.
+- Goal and event configuration.
+- Anomaly detection and configurable alerts.
+- Analytics data-quality monitoring.
+- A clear event taxonomy and measurement definitions.
+
+Provide drill-down functionality so administrators can move from a high-level metric to the underlying report and relevant records.
+
+Use meaningful visualizations, accessible data tables, and clear explanations of trends.
+
+**Critical requirement:** Do not fabricate analytics, invent historical data, or display meaningless placeholder metrics as though they were real.
+
+Implement genuine data collection, event tracking, storage, aggregation, and reporting where the infrastructure supports it.
+
+If additional tracking is necessary, define and implement the required instrumentation. Clearly distinguish actual measurements, estimates, unavailable data, and features that still require configuration.
+
+Respect consent requirements, privacy expectations, data minimization, and applicable data-protection laws.
+
+### 5.3 User and Account Management
+
+Where relevant to the website, provide:
+
+- User directory.
+- Search, filtering, sorting, and pagination.
+- User profiles and account details.
+- Account status and verification information.
+- Registration and activity history.
+- Role and permission management.
+- Account suspension and reactivation.
+- Appropriate account deletion workflows.
+- Administrative notes where justified.
+- Account-level activity history.
+- Bulk actions with safeguards.
+- Import and export functionality where appropriate.
+- Support-related account actions.
+- Clear audit trails for sensitive changes.
+
+Do not expose passwords, authentication secrets, private tokens, or unnecessary personal data.
+
+### 5.4 Content Management
+
+If the website contains manageable content, provide an integrated content management experience.
+
+Potential capabilities include:
+
+- Content creation and editing.
+- Drafts and publishing.
+- Scheduling.
+- Categories, tags, and taxonomies.
+- Media and asset management.
+- SEO metadata.
+- Slugs and canonical URLs.
+- Content previews.
+- Revision history.
+- Content status and approval workflows.
+- Search and bulk management.
+- Content performance analytics.
+- Broken-link and content-quality checks.
+
+Support the content types that actually exist in the application rather than introducing irrelevant content models.
+
+### 5.5 Website Configuration and Customization
+
+Centralize important website settings, including applicable options such as:
+
+- Site identity and branding.
+- Navigation and footer configuration.
+- Homepage and landing-page settings.
+- Feature flags.
+- Default SEO settings.
+- Email templates.
+- Notification preferences.
+- Localization and language settings.
+- Time zone and regional settings.
+- Integrations and API configuration.
+- Maintenance mode.
+- Public-facing feature configuration.
+
+Validate configuration changes and provide clear feedback when settings are saved.
+
+Protect sensitive settings and ensure that configuration changes cannot unintentionally break the public website.
+
+### 5.6 Business Operations
+
+Inspect the website's actual business model and determine whether it requires administrative modules for:
+
+- Products and inventory.
+- Orders and fulfillment.
+- Payments and transactions.
+- Subscriptions and billing.
+- Refunds and disputes.
+- Discounts and promotional campaigns.
+- Customer relationships.
+- Leads and opportunities.
+- Bookings and appointments.
+- Memberships and access entitlements.
+
+Only implement relevant modules.
+
+Financial and transactional actions must use authoritative backend records and established payment-provider workflows. Never simulate successful transactions or store sensitive payment credentials unnecessarily.
+
+### 5.7 Customer Support and Communications
+
+Where appropriate, provide:
+
+- Support requests and ticket management.
+- Contact form submissions.
+- Customer feedback.
+- Message history.
+- Email delivery and failure monitoring.
+- Notification management.
+- Saved responses.
+- Internal notes and assignment.
+- Response-time and resolution reporting.
+- Customer communication preferences.
+
+Respect consent, communication permissions, and access restrictions.
+
+### 5.8 Search and Discovery Management
+
+If the public website has search or discovery features, provide:
+
+- Search query analytics.
+- Popular searches.
+- Zero-result queries.
+- Search performance.
+- Indexing and crawl diagnostics.
+- Content discoverability insights.
+- Search configuration.
+- Synonyms, redirects, or ranking controls where supported.
+
+### 5.9 SEO and Website Performance
+
+Build an integrated SEO and technical performance workspace where appropriate.
+
+Include:
+
+- Page titles and meta descriptions.
+- Canonical URL checks.
+- Sitemap status.
+- Robots directives.
+- Broken links.
+- Redirect management.
+- Indexability diagnostics.
+- Structured-data validation.
+- Page performance metrics.
+- Core Web Vitals where valid measurement data is available.
+- Search landing-page performance.
+- Technical issue monitoring.
+
+Differentiate data generated by the application from information that requires external search-engine integrations.
+
+Provide native tools where feasible and optional integrations when an external service is genuinely necessary.
+
+### 5.10 Security, Roles, and Audit Logs
+
+Security must be foundational rather than an afterthought.
+
+Implement or improve:
+
+- Role-based access control.
+- Fine-grained permissions.
+- Least-privilege defaults.
+- Secure administrative authentication.
+- Multi-factor authentication support where available.
+- Session and account security controls.
+- Sensitive-action confirmation.
+- Audit logs for privileged operations.
+- Login and authorization failure monitoring.
+- Secure secrets management.
+- Protection against common web application vulnerabilities.
+- Appropriate rate limiting.
+- Safe handling of personal information.
+- Recovery procedures for administrative access.
+
+Support separate permissions for viewing, creating, editing, deleting, exporting, publishing, configuring, and performing sensitive actions where appropriate.
+
+Hiding a button is not sufficient authorization. Enforce permissions on the server and at every relevant API or data-access boundary.
+
+### 5.11 System Health and Operations
+
+Give administrators a reliable view of the application's operational state.
+
+Include relevant capabilities such as:
+
+- Application health.
+- API availability and error rates.
+- Background job status.
+- Failed jobs and retry workflows.
+- Integration connectivity.
+- Email delivery health.
+- Database and storage utilization.
+- Application logs.
+- Error monitoring.
+- Performance trends.
+- Uptime and incident history.
+- Backup status and recovery information.
+- Maintenance and deployment status.
+
+Do not expose secrets, raw credentials, sensitive payloads, or unrestricted infrastructure controls through the UI.
+
+Integrate with existing monitoring infrastructure when appropriate instead of unnecessarily duplicating it.
+
+### 5.12 Notifications, Tasks, and Alerts
+
+Create a centralized notification and action center.
+
+Provide configurable alerts for relevant conditions, such as:
+
+- Significant traffic or conversion changes.
+- Revenue anomalies where applicable.
+- Failed integrations.
+- System errors.
+- Failed background jobs.
+- Security events.
+- Content awaiting approval.
+- Support requests requiring attention.
+- Backup failures.
+- Important operational thresholds.
+
+Alerts should be actionable, explain why they triggered, support severity levels, and avoid excessive noise.
+
+### 5.13 Data Management and Exports
+
+Where relevant, provide:
+
+- CSV and other appropriate exports.
+- Filtered data exports.
+- Scheduled reports.
+- Import validation.
+- Data quality checks.
+- Duplicate detection.
+- Retention and deletion controls.
+- Privacy-related data requests.
+- Backup and restore visibility.
+- Safe bulk operations.
+
+Ensure exports respect permissions, privacy restrictions, and data-retention policies.
+
+### 5.14 Administration Preferences
+
+Allow administrators to configure their own workspace where useful:
+
+- Dashboard layouts.
+- Saved filters.
+- Preferred date ranges.
+- Table column visibility.
+- Notification preferences.
+- Default landing page.
+- Theme preferences if supported.
+- Personal shortcuts.
+
+Keep personal preferences separate from global website configuration.
+
+---
+
+## 6. Build a Unified Design System
+
+The redesigned admin console must retain the recognizable identity of the existing public-facing website.
+
+Before introducing new styling, inspect the website's existing:
+
+- Brand colors.
+- Typography.
+- Logo and brand assets.
+- Spacing conventions.
+- Border radii.
+- Iconography.
+- Component styles.
+- Tone of voice.
+- Visual hierarchy.
+- Light and dark themes, if applicable.
+
+Reuse existing design tokens and components where appropriate.
+
+The admin console should feel like a natural extension of the website, not a separate product with an unrelated visual identity.
+
+### Design direction
+
+Aim for a design that is:
+
+- Minimalist without being empty.
+- Premium without being flashy.
+- Human and approachable.
+- Calm and visually organized.
+- Highly legible.
+- Functional and information-rich.
+- Consistent across all modules.
+- Fast to navigate.
+- Appropriate for both occasional and expert administrators.
+
+Use generous spacing where it improves comprehension, but preserve sufficient information density for professional administrative workflows.
+
+Avoid excessive gradients, unnecessary shadows, decorative animations, oversized dashboard cards, excessive borders, and visual clutter.
+
+Use color intentionally to communicate hierarchy, status, severity, and interaction.
+
+Do not sacrifice usability or accessibility for aesthetic minimalism.
+
+### Component standards
+
+Establish reusable, consistent components for:
+
+- Navigation.
+- Breadcrumbs.
+- Page headers.
+- Buttons.
+- Forms.
+- Input validation.
+- Search and filter controls.
+- Data tables.
+- Pagination.
+- Metric summaries.
+- Charts.
+- Status indicators.
+- Tabs.
+- Dialogs and drawers.
+- Dropdown menus.
+- Notifications.
+- Confirmation screens.
+- Empty states.
+- Loading states.
+- Error states.
+- Tooltips.
+- Date-range selectors.
+- Bulk-action toolbars.
+
+Every component must have consistent interaction behavior, accessible labels, keyboard support, and appropriate responsive variants.
+
+---
+
+## 7. Make Desktop and Mobile Equally Excellent
+
+The admin console must be designed and tested for desktop, tablet, and mobile—not merely compressed until it fits a small screen.
+
+### Desktop experience
+
+Prioritize:
+
+- Efficient navigation.
+- A clear persistent sidebar where appropriate.
+- Search and quick actions.
+- Readable dashboards.
+- Dense but legible data tables.
+- Keyboard navigation.
+- Efficient bulk operations.
+- Multi-step workflows that preserve context.
+- Appropriate use of the available screen width.
+
+### Mobile experience
+
+Treat mobile as a first-class administrative environment.
+
+Implement:
+
+- Responsive navigation, using a drawer or another appropriate pattern.
+- Touch-friendly controls.
+- Properly sized interactive targets.
+- Responsive forms.
+- Readable typography.
+- Mobile-friendly charts.
+- Adaptable tables using horizontal scrolling, prioritized columns, or card layouts where appropriate.
+- Accessible dialogs and drawers.
+- Sticky actions when useful.
+- Clear save and submission feedback.
+- Convenient access to common administrative tasks.
+- Safe handling of destructive actions on touch devices.
+
+Do not simply hide essential desktop features on mobile.
+
+For complex operations that genuinely require a larger screen, explain the limitation and provide the best possible mobile workflow.
+
+Test realistic screen widths and interaction patterns, including narrow mobile viewports.
+
+The final result must feel intentionally designed for each device category.
+
+---
+
+## 8. Make the Interface Human and Effortless to Use
+
+The admin console should help administrators understand what is happening and what to do next.
+
+Apply the following principles consistently:
+
+- Use clear, human-readable language.
+- Avoid unnecessary technical jargon.
+- Give pages descriptive titles.
+- Explain unfamiliar metrics and settings.
+- Provide contextual help when useful.
+- Use sensible defaults.
+- Preserve user input when validation fails.
+- Explain why an action failed and how to resolve it.
+- Make important actions discoverable.
+- Minimize unnecessary navigation.
+- Preserve filters and context when moving between related screens.
+- Use breadcrumbs where they clarify hierarchy.
+- Provide useful empty states with next steps.
+- Distinguish loading, success, warning, and error states.
+- Confirm successful operations only after the backend confirms success.
+- Warn users before irreversible or consequential actions.
+- Offer undo or recovery mechanisms when feasible.
+- Prevent duplicate submissions and accidental destructive actions.
+
+Avoid unnecessary confirmation dialogs for harmless actions, and do not overload the interface with tooltips, popups, or onboarding interruptions.
+
+The interface should be intuitive enough that a new administrator can understand its major functions without extensive training.
+
+---
+
+## 9. Make the Admin Console Self-Sufficient
+
+The long-term goal is to make the admin console the central place for operating and understanding the website.
+
+For every important administrative task, ask:
+
+1. Can this task be completed inside the admin console?
+2. Does the administrator have enough information to make a decision?
+3. Can the administrator investigate the underlying details?
+4. Can the administrator take the necessary action?
+5. Can the administrator verify that the action succeeded?
+6. Is there an appropriate audit trail?
+7. Can this workflow be simplified or automated?
+8. Does completing the task require an avoidable external website?
+
+Eliminate unnecessary fragmentation by centralizing related workflows.
+
+However, do not rebuild complex external services merely for the sake of having everything in one place. Prefer a secure, maintainable integration when it is more appropriate.
+
+For example, an analytics workspace should provide meaningful first-party measurement and reporting. It should not merely embed a third-party dashboard or display hardcoded numbers.
+
+Likewise, integrating an existing email provider, payment processor, or monitoring service is often better than recreating its entire infrastructure.
+
+The objective is to eliminate unnecessary context switching while preserving reliability, security, and maintainability.
+
+---
+
+## 10. Implement Real Functionality, Not Just a Visual Prototype
+
+This is one of the most important requirements.
+
+**Every implemented control must perform its advertised action.**
+
+Do not deliver a beautiful interface filled with nonfunctional buttons, placeholder data, fake metrics, static charts, or incomplete workflows.
+
+For every feature:
+
+- Implement the necessary frontend.
+- Implement the backend behavior.
+- Connect it to the correct data source.
+- Add validation and error handling.
+- Enforce permissions.
+- Provide appropriate loading and success states.
+- Handle empty results.
+- Handle network failures.
+- Test the complete workflow.
+
+For features requiring external services, determine whether an existing integration can be reused or configured.
+
+If a feature depends on missing credentials, infrastructure, or a third-party account, implement the supported parts and clearly document the remaining setup requirements.
+
+Never fabricate credentials, invent API responses, claim an integration is connected when it is not, or represent sample data as live production data.
+
+If mock data is needed during development, isolate it clearly and ensure the production interface cannot silently mistake it for real information.
+
+---
+
+## 11. Technical Architecture and Engineering Standards
+
+Follow the existing project's architecture unless there is a compelling, documented reason to change it.
+
+Before implementation:
+
+- Identify the existing framework and version.
+- Understand routing and rendering patterns.
+- Inspect data access and API conventions.
+- Review the database and migration system.
+- Identify existing authentication and permission middleware.
+- Review installed libraries.
+- Inspect the deployment environment.
+- Understand existing testing and build commands.
+
+Use the project's established conventions where they are sound.
+
+### Engineering requirements
+
+- Reuse components and business logic where appropriate.
+- Keep modules cohesive and maintainable.
+- Separate presentation from business logic.
+- Validate inputs on both client and server where appropriate.
+- Enforce access controls on the server.
+- Use transactions for operations requiring atomicity.
+- Handle asynchronous operations reliably.
+- Avoid unnecessary database queries.
+- Paginate large datasets.
+- Avoid loading entire datasets into the browser unnecessarily.
+- Optimize expensive analytics queries.
+- Add indexes where justified.
+- Protect against injection, cross-site scripting, cross-site request forgery, and other relevant vulnerabilities.
+- Protect sensitive credentials and personal information.
+- Add migrations for schema changes.
+- Maintain backward compatibility where necessary.
+- Avoid unnecessary dependencies.
+- Add appropriate automated tests.
+- Preserve existing application functionality.
+
+Do not replace the application's architecture, database, or authentication system merely to achieve a cleaner-looking implementation.
+
+---
+
+## 12. Analytics Implementation Requirements
+
+Because integrated analytics is a major objective, investigate exactly what data the website currently collects and what it can reliably measure.
+
+Define the measurement model before building reports.
+
+For every important metric, document:
+
+- Metric name.
+- Business definition.
+- Calculation method.
+- Required events or records.
+- Data source.
+- Time zone.
+- Attribution rules where applicable.
+- Known limitations.
+- Data freshness.
+- Retention policy.
+
+Implement appropriate event collection and reporting infrastructure when needed.
+
+Support privacy-conscious measurement, consent handling where required, duplicate-event prevention, and reliable aggregation.
+
+Distinguish between:
+
+- Events observed by the application.
+- Derived metrics calculated from those events.
+- Business records such as actual orders or subscriptions.
+- Imported information from connected services.
+- Estimates.
+- Unavailable measurements.
+
+Do not imply that first-party tracking captures all browser activity or all external traffic sources.
+
+Provide a clear analytics data-quality view so administrators can identify missing events, tracking failures, delayed processing, and unreliable reports.
+
+---
+
+## 13. Prioritize Work Intelligently
+
+After the audit, create a phased implementation roadmap.
+
+Use these priorities:
+
+**P0 — Critical**
+
+Security vulnerabilities, broken essential functionality, data integrity problems, and issues preventing the admin console from operating reliably.
+
+**P1 — Core**
+
+Essential administration workflows, navigation, responsive foundations, functional dashboard, core user and content management, permissions, and critical operational visibility.
+
+**P2 — Advanced**
+
+Comprehensive analytics, reporting, advanced filters, exports, automation, integrations, and deeper operational tools.
+
+**P3 — Enhancements**
+
+Advanced personalization, additional workflow optimizations, sophisticated alerting, and lower-priority quality-of-life improvements.
+
+Adjust the roadmap to the actual application.
+
+Do not allow optional advanced features to delay critical security fixes or essential functionality.
+
+For every major item, specify its dependencies, acceptance criteria, and verification method.
+
+---
+
+## 14. Execute the Rebuild in Controlled Phases
+
+Follow this implementation sequence.
+
+### Phase 1: Discovery
+
+Inspect the application, identify all admin routes, review the existing architecture, and document the current capabilities.
+
+Deliverable: A verified system inventory and initial risk assessment.
+
+### Phase 2: Audit
+
+Assess every module and workflow, identify bugs and usability problems, and compare current functionality against the required administrative capabilities.
+
+Deliverable: A comprehensive audit and feature gap matrix.
+
+### Phase 3: Architecture
+
+Define the information architecture, module structure, permissions, data requirements, analytics model, and technical implementation strategy.
+
+Deliverable: A clear implementation plan grounded in the actual codebase.
+
+### Phase 4: Design System
+
+Create or refine reusable design tokens, layout patterns, navigation, tables, forms, charts, and responsive components.
+
+Deliverable: A consistent design system aligned with the public website.
+
+### Phase 5: Core Rebuild
+
+Implement the primary layout, navigation, dashboard, common interaction patterns, permissions, and essential administrative workflows.
+
+Deliverable: A functioning foundation rather than a collection of disconnected pages.
+
+### Phase 6: Module Implementation
+
+Implement and integrate the applicable management, analytics, reporting, configuration, operational, and security modules.
+
+Deliverable: A coherent and functional administrative platform.
+
+### Phase 7: Integration
+
+Connect each module to the appropriate APIs, database records, background processes, and external services.
+
+Deliverable: Working end-to-end functionality.
+
+### Phase 8: Testing
+
+Test functionality, data correctness, security, responsiveness, accessibility, performance, and regression risks.
+
+Deliverable: Verified workflows and a documented list of remaining limitations.
+
+### Phase 9: Refinement
+
+Resolve inconsistencies, simplify confusing interactions, improve performance, and refine the design based on actual use cases.
+
+Deliverable: A polished, consistent, production-oriented experience.
+
+### Phase 10: Final Verification
+
+Run the available build, lint, type-checking, and test commands. Fix newly introduced errors and verify the final result.
+
+Deliverable: A stable implementation with clear documentation and any remaining deployment requirements.
+
+Do not stop after creating the shell, dashboard, or first few pages. Continue until the agreed scope is implemented or a genuine external dependency prevents further completion.
+
+---
+
+## 15. Comprehensive Testing and Acceptance Criteria
+
+The rebuild is not complete until it has been verified against measurable requirements.
+
+### Functional acceptance
+
+- Every implemented navigation item leads to the correct destination.
+- Every visible control performs its documented action.
+- All applicable create, read, update, and delete workflows work correctly.
+- Search, filtering, sorting, pagination, and exports return correct results where implemented.
+- Forms validate inputs and communicate errors clearly.
+- Changes persist correctly.
+- Permissions are enforced on the server.
+- Destructive actions are protected appropriately.
+- Reports use real, traceable data.
+- Analytics calculations are consistent with their definitions.
+- Integration failures are handled gracefully.
+- Loading, empty, error, and success states work correctly.
+
+### Responsive acceptance
+
+Test representative narrow mobile, large mobile, tablet, laptop, and desktop viewports.
+
+Verify:
+
+- No unintended horizontal overflow.
+- No clipped or inaccessible controls.
+- Readable tables, charts, and forms.
+- Usable navigation.
+- Adequate touch targets.
+- Correct dialog and drawer behavior.
+- Consistent layouts across modules.
+- Access to essential administrative actions on mobile.
+
+### Accessibility acceptance
+
+Aim for WCAG 2.2 AA conformance where applicable.
+
+Check:
+
+- Keyboard navigation.
+- Focus visibility and order.
+- Semantic structure.
+- Screen-reader labels.
+- Contrast.
+- Form error announcements.
+- Dialog focus management.
+- Reduced-motion preferences.
+- Accessible chart alternatives.
+- Appropriate status announcements.
+
+### Security acceptance
+
+Verify:
+
+- Unauthorized users cannot access administrative routes.
+- Restricted API actions cannot be executed directly.
+- Role changes take effect correctly.
+- Sensitive information is not unnecessarily exposed.
+- Privileged actions are logged.
+- Input validation and output handling are appropriate.
+- Secrets are not committed to source control.
+- Administrative exports respect access controls.
+- Error messages do not disclose sensitive internals.
+
+### Performance acceptance
+
+Establish baselines and optimize against realistic usage.
+
+Pay particular attention to:
+
+- Initial page load.
+- Dashboard query performance.
+- Large tables.
+- Analytics aggregation.
+- Search and filtering.
+- Mobile rendering.
+- Expensive API requests.
+- Bundle size and unnecessary dependencies.
+
+Do not claim that a requirement passes unless it has actually been tested.
+
+---
+
+## 16. Required Deliverables
+
+At the end of the project, provide:
+
+1. **Current-state audit:** What exists, what works, what is broken, and what is missing.
+2. **Feature inventory:** A comprehensive list of existing and proposed capabilities.
+3. **Gap analysis:** Improvements, additions, consolidations, removals, and unresolved questions.
+4. **Security assessment:** Relevant vulnerabilities, risks, and remediation.
+5. **UX/UI assessment:** Current usability issues and the design decisions made to resolve them.
+6. **New information architecture:** Final navigation and module hierarchy.
+7. **Design system:** Reusable styles, components, and responsive conventions.
+8. **Implementation:** The actual rebuilt admin console integrated into the existing application.
+9. **Analytics documentation:** Metric definitions, tracking requirements, data sources, and known limitations.
+10. **Testing report:** Tests executed, results, defects fixed, and remaining issues.
+11. **Integration report:** Connected services, required credentials, and outstanding configuration.
+12. **Deployment instructions:** Any migrations, environment variables, scheduled jobs, or deployment steps required.
+13. **Remaining limitations:** Anything incomplete, blocked, unverified, or dependent on external setup.
+14. **Recommended next steps:** A prioritized roadmap for future improvements.
+
+Keep the documentation concise enough to be useful while making the underlying audit and feature inventory sufficiently comprehensive.
+
+---
+
+## 17. Rules That Must Never Be Violated
+
+- Do not redesign based on assumptions when the actual implementation can be inspected.
+- Do not invent features, data, integrations, or business requirements.
+- Do not replace working functionality without understanding its dependencies.
+- Do not create a visually impressive but functionally empty dashboard.
+- Do not populate production analytics with fake numbers.
+- Do not leave critical controls as placeholders.
+- Do not bypass authentication or authorization for convenience.
+- Do not expose secrets or sensitive customer data.
+- Do not compromise the public website to simplify the admin console.
+- Do not introduce unnecessary complexity merely to maximize the feature count.
+- Do not treat mobile responsiveness as an afterthought.
+- Do not claim testing, completion, or security that has not been verified.
+- Do not stop at recommendations when implementation is possible.
+- Do not silently omit features that cannot be completed; document the blocker and the remaining work.
+
+When a decision is ambiguous, prefer the solution that is safer, more maintainable, easier to use, consistent with the existing architecture, and better supported by evidence.
+
+If a consequential decision genuinely requires information that cannot be established from the codebase, document the assumption and its implications. Ask only the questions that are necessary to avoid a materially incorrect implementation.
+
+---
+
+## 18. Definition of Done
+
+The project is complete when the following conditions have been satisfied:
+
+- The existing admin console has been comprehensively inspected and audited.
+- The existing website's brand identity has been preserved and refined.
+- A coherent, intuitive administrative information architecture is in place.
+- The redesigned console works well on desktop, tablet, and mobile.
+- Essential administrative workflows are functional end to end.
+- Applicable advanced modules have been implemented or their dependencies clearly documented.
+- Analytics and reporting are based on real, traceable data.
+- Security and authorization are enforced throughout the relevant system.
+- Common tasks are easy to discover and complete.
+- Error handling, loading states, empty states, and confirmation feedback are consistent.
+- The application builds successfully and the relevant tests have been executed.
+- No known critical regression introduced by the rebuild remains unresolved.
+- Deployment and integration requirements are documented.
+- Remaining limitations are explicit rather than hidden.
+
+The final product should feel like a cohesive, thoughtfully engineered platform—not a collection of unrelated admin pages.
+
+## Final Instruction
+
+**Start by examining the real project. Audit before redesigning, understand before replacing, plan before implementing, and test before declaring completion.**
+
+Be exhaustive in your investigation and disciplined in your implementation.
+
+Build the best admin console that is justified by the actual needs of this website: minimalist but powerful, comprehensive but not overwhelming, technically robust but approachable, and equally practical on desktop and mobile.
+
+The ultimate goal is to give me a single, trustworthy administrative command center from which I can confidently run and understand the entire website, with as little unnecessary context switching as possible.
