@@ -1,0 +1,46 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+const tests = [];
+const check = (name, passed) => tests.push({ name, passed: Boolean(passed) });
+const noSecrets = read('server/constants.ts');
+const audience = read('server/services/notificationAudience.ts');
+const routes = read('server/adminOwnerRoutes.ts');
+const analytics = read('src/components/admin/modules/AnalyticsModule.tsx');
+const students = read('src/components/admin/modules/StudentsModule.tsx');
+const layout = read('src/components/admin/AdminLayout.tsx');
+const app = read('src/AdminApp.tsx');
+const headers = read('server/securityHeaders.ts');
+const ignore = read('.gitignore');
+const schema = read('server/db/schema.ts');
+const campaignWorker = read('server/services/notificationCampaigns.ts');
+const supportUi = read('src/components/admin/modules/SupportModule.tsx');
+const supportService = read('server/services/adminOwnerService.ts');
+const academicUi = read('src/components/admin/modules/AcademicModule.tsx');
+const academicRoutes = read('server/adminOwnerRoutes.ts');
+const packageJson = JSON.parse(read('package.json'));
+
+check('source constants contain no embedded database or OAuth credentials', !/postgres(?:ql)?:\/\/[^\s'"`]+'?/.test(noSecrets) && !/GOCSPX-[A-Za-z0-9_-]+/.test(noSecrets) && !/npg_[A-Za-z0-9_-]+/.test(noSecrets));
+check('secrets and browser session artifacts are ignored', /\.env/.test(ignore) && /cookies\*?\.txt/.test(ignore) && /storage-state\.json/.test(ignore));
+check('unsafe local environment and cookie artifacts are absent', !fs.existsSync('.env') && !fs.existsSync('cookies.txt'));
+check('notification audience allowlist is explicit and excludes unsupported legacy scopes', /BROADCAST_AUDIENCES\s*=\s*\['ALL', 'ACTIVE', 'PAID', 'FREE', 'EXPIRING', 'STUDENT'\]/.test(audience) && !/UNREGISTERED|CUSTOM/.test(audience));
+check('unsupported audience values are rejected instead of defaulting to all', /default:[\s\S]{0,100}throw new Error\('Unsupported notification audience\.'\)/.test(audience));
+check('recipient preview and campaign send use the shared audience query', /notifications\/recipients/.test(routes) && /getNotificationAudienceCondition/.test(routes) && /notifications\/campaigns/.test(routes));
+check('campaign drafts and scheduling are backend-backed', /DRAFT/.test(routes) && /SCHEDULED/.test(routes) && /PROCESSING/.test(campaignWorker) && /sentCount/.test(schema));
+check('analytics range is sent to API and export', /analytics\?range=\$\{timeRange\}/.test(analytics) && /export\/analytics\?format=csv&range=\$\{timeRange\}/.test(analytics));
+check('analytics export uses authenticated fetch rather than an auth token URL parameter', /fetch\(`\/api\/admin\/owner\/export\/analytics/.test(analytics) && /Authorization.*Bearer/.test(analytics) && !/\?token=/.test(analytics));
+check('student directory supports actual account status actions with a required reason', /accountStatus/.test(students) && /suspend|reactivat/i.test(students) && /reason/i.test(students));
+check('admin navigation has a mobile drawer and semantic links', /mobile|drawer/i.test(layout) && /aria-current/.test(layout) && /popstate/.test(app));
+check('CSP frame ancestors are allow-listed without wildcard', /approvedFrameAncestors/.test(headers) && /candidate\.includes\('\*'\)/.test(headers) && !/frame-ancestors\s+\*/.test(headers));
+check('production config rejects mixed development/production environment flags', /deploymentEnv === 'production' && nodeEnv !== 'production'/.test(read('server/config.ts')));
+check('sent campaign count has a forward migration', fs.existsSync('server/db/migrations/0021_notification_campaign_sent_count.sql') && /sent_count/.test(read('server/db/migrations/0021_notification_campaign_sent_count.sql')));
+check('support inbox uses server filtering, pagination, and on-demand conversation reads', /pageSize: String\(PAGE_SIZE\)/.test(supportUi) && /support\/\$\{encodeURIComponent\(selectedTicket\.id\)\}\/thread/.test(supportUi) && /offset\(\(page - 1\) \* pageSize\)/.test(supportService) && /support\/:id\/thread/.test(routes));
+check('academic term form no longer defaults to stale 2024-2025 values and uses server context', !/2024-2025/.test(academicUi) && /currentContext/.test(academicUi) && /registrationStart > registrationEnd/.test(academicRoutes));
+check('scheduled campaign processing has bounded retry and failure tracking', /processingAt/.test(campaignWorker) && /failureReason/.test(campaignWorker) && /\.for\('update'\)/i.test(campaignWorker));
+check('release static checks are part of a dedicated npm script', Boolean(packageJson.scripts?.['test:release-static']));
+
+for (const test of tests) console.log(`${test.passed ? 'PASS' : 'FAIL'} — ${test.name}`);
+console.log(`\nAdmin hardening regression checks: ${tests.filter(t => t.passed).length}/${tests.length} passed`);
+if (tests.some(t => !t.passed)) process.exit(1);
